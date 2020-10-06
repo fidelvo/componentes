@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:componentes/src/providers/menu_provider.dart';
+
 class HomePage extends StatelessWidget {
 
   @override
@@ -13,6 +15,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _lista(){
+
+    //print(menuProvider.opciones);
+    menuProvider.cargarData();
+
+    // Un Future tiene varios estados
+    // 1. Cuando se está pidiendo información
+    // 2. Cuando se resuelve
+    // 3. Cuando da un error
 
     return ListView(
       children: _crearListaItems(),
